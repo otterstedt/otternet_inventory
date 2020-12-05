@@ -1,0 +1,2 @@
+ot_hosts_ict_hostname: {{ vault_ot_hosts_ict_hostname }}
+ot_hosts_ict_username: {{ vault_ot_hosts_ict_username }}

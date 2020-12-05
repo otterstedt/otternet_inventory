@@ -1,0 +1,18 @@
+[Unit]
+Description=Grafana Docker
+Requires=docker.service
+After=influxdb.service 
+
+[Service]
+ExecStartPre=/usr/bin/docker volume create grafana-storage
+ExecStart=/usr/bin/docker run --name grafana -e "GF_PANELS_DISABLE_SANITIZE_HTML=true" -v grafana-storage:/var/lib/grafana --net=host grafana/grafana:7.3.4
+ExecStop=/usr/bin/docker stop grafana
+ExecReload=/usr/bin/docker restart grafana
+User=otterstedt
+Group=docker
+Environment=PATH=/bin:/usr/bin:/usr/local/bin:$PATH
+TimeoutSec=600
+
+[Install]
+Alias=grafana.service
+WantedBy=multi-user.target
