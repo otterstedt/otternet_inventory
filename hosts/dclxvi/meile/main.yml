@@ -4,3 +4,9 @@ ot_host_name: meile
 ot_host_software_packages: []
 
 ot_host_ssh_tunnels: []
+
+ot_host_mounts:
+  - name: stick
+    uuid: 3b57050d-afbc-44e0-a951-31d0132618b5
+    mount: /home/pi/usbstick
+    args: auto nosuid,nodev,nofail 0 0
