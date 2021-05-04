@@ -1,0 +1,13 @@
+<!-- Start ssh session on boot and keep alive/reconnect on failure -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+   <key>Label</key>
+   <string>com.otterstedt.sshtunnels</string>
+   <key>ProgramArguments</key>
+   <array><string>/usr/bin/ssh -Nt ict-amazon-tunnels</string></array>
+   <key>RunAtLoad</key>
+   <true/>
+</dict>
+</plist>
